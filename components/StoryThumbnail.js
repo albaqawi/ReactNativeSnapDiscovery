@@ -19,11 +19,11 @@ export default class StoryThumbnail extends React.PureComponent<StoryThumbnailPr
   render() {
     const { story, onPress } = this.props;
     return (
-      <View style={styles.container}>
-        <TouchableWithoutFeedback {...{ onPress }}>
+      <TouchableWithoutFeedback {...{ onPress }}>
+        <View style={styles.container}>
           <Image source={story.source} style={styles.image} />
-        </TouchableWithoutFeedback>
-      </View>
+        </View>
+      </TouchableWithoutFeedback>    
     );
   }
 }
