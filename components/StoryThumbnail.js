@@ -2,6 +2,7 @@
 import * as React from "react";
 import {
   View, StyleSheet, Image, Dimensions,
+  TouchableWithoutFeedback
 } from "react-native";
 
 import type Story from "./StoryModel";
@@ -11,14 +12,17 @@ const height = width * 1.77;
 
 type StoryThumbnailProps = {
   story: Story,
+  onPress: () => mixed,
 };
 
 export default class StoryThumbnail extends React.PureComponent<StoryThumbnailProps> {
   render() {
-    const { story } = this.props;
+    const { story, onPress } = this.props;
     return (
       <View style={styles.container}>
-        <Image source={story.source} style={styles.image} />
+        <TouchableWithoutFeedback {...{ onPress }}>
+          <Image source={story.source} style={styles.image} />
+        </TouchableWithoutFeedback>
       </View>
     );
   }
@@ -29,10 +33,12 @@ const styles = StyleSheet.create({
     width,
     height,
     marginTop: 16,
+    borderRadius: 5,
   },
   image: {
     ...StyleSheet.absoluteFillObject,
     width: null,
     height: null,
+    borderRadius: 5,
   },
 });
