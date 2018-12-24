@@ -19,26 +19,17 @@ export default class StoryModal extends React.PureComponent <StoryModalProps> {
     const {story} = this.props
     console.log("Inside StoryModal the passed story is:" + story);
         
-        return ( <
-            View style = {
-                styles.container
-            } >
-            <
-            Image source = {
-                story.source
-            }
-            style = {
-                styles.image
-            }
-            /> <
-            /View>
+        return ( 
+        <View style = {styles.container} >
+            <Image source = { story.source } style = { styles.image } /> 
+        </View>
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        ...StyleSheet.absoluteFillObject
+        ...StyleSheet.absoluteFillObject,
     },
     image: {
         ...StyleSheet.absoluteFillObject,

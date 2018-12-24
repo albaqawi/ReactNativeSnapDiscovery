@@ -54,7 +54,7 @@ export default class Discovery extends React.PureComponent<
             ))}
           </View>
         </ScrollView>
-        {selectedStory && <StoryModal story={this.selectedStory} />}
+        {selectedStory && <StoryModal story={selectedStory} />}
       </View>
     );
   }
